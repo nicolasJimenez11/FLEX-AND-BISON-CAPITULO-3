@@ -4,11 +4,11 @@
 
 %%
 
-[^ \t\n]+      { printf("BLOQUE: %s\n", yytext); }
+[^ \t\n]+      { printf("BLOQUE: %s", yytext); }
 
 [ \t]+         ;   /* ignorar espacios y tabs */
 
-\n              { printf("FIN DE LINEA\n"); }
+\n              { printf("FIN DE LINEA"); }
 
 %%
 
