@@ -72,6 +72,24 @@ Ejercicio 3
 En el tercer ejercicio se mejora la implementación de la tabla de símbolos eliminando la limitación de tamaño fijo que podía provocar fallos cuando la estructura se llenaba. Se implementa el método de chaining, en el cual cada posición de la tabla hash apunta a una lista enlazada de símbolos, permitiendo almacenar un número indefinido de palabras sin necesidad de redimensionar la tabla completa. Esta solución resulta más simple y estable para aplicaciones como la concordancia o el cross-reference, ya que evita mover elementos existentes como ocurriría en un proceso de rehashing. Con ello se demuestra una aplicación práctica de estructuras dinámicas en C dentro del contexto del análisis léxico.
 
 
+**PRUEBAS Y RESULTADOS**
+
+Ejercicio 1
+
+Para el primer ejercicio realicé pruebas ingresando diferentes líneas de texto con palabras, números y espacios. El programa identificó correctamente los bloques definidos por la expresión regular y separó adecuadamente cada palabra según lo esperado. También se verificó que los saltos de línea fueran reconocidos correctamente y que no aparecieran advertencias durante la ejecución. En general, el comportamiento fue consistente con lo diseñado y permitió comprobar que el reconocimiento de bloques funciona de manera adecuada.
+
+Ejercicio 2
+
+En el segundo ejercicio probé textos con distintas combinaciones de mayúsculas y minúsculas, por ejemplo palabras como “Casa”, “CASA” y “casa” dentro del mismo contenido. Los resultados demostraron que el programa las contabiliza como una sola palabra, lo cual confirma que el uso de tolower() y strcasecmp() fue implementado correctamente. Los conteos obtenidos coincidieron con el número real de apariciones, mostrando que la concordancia funciona de forma correcta y sin duplicaciones innecesarias.
+
+Ejercicio 3
+
+Para el tercer ejercicio ingresé textos más extensos con una mayor variedad de palabras para evaluar el comportamiento de la tabla hash dinámica. El programa manejó correctamente las colisiones mediante el uso de listas enlazadas (chaining), sin presentar errores relacionados con el tamaño de la estructura. Esto permitió comprobar que la implementación es estable y escalable, incluso cuando aumenta la cantidad de datos procesados.
+
+
+
+
+
 **ANALISIS**
 
 La implementación de los ejercicios del Capítulo 2 permitió analizar de manera detallada el funcionamiento interno de un analizador léxico generado con Flex, comprendiendo cómo las expresiones regulares se transforman en autómatas finitos deterministas para el reconocimiento eficiente de patrones en un flujo de entrada. Se evidenció que Flex aplica el principio de coincidencia más larga (longest match) y prioriza las reglas según su orden de aparición, lo que obliga a diseñar cuidadosamente las expresiones regulares para evitar ambigüedades o reglas inalcanzables. Asimismo, la integración de código en C dentro de las acciones del scanner demostró que el análisis léxico no se limita a la identificación de tokens, sino que puede incluir procesamiento adicional mediante estructuras de datos dinámicas. En particular, la implementación de una tabla hash con encadenamiento (chaining) permitió eliminar la restricción de tamaño fijo y manejar colisiones de forma eficiente mediante listas enlazadas, mejorando la escalabilidad y robustez del sistema. En conjunto, estos ejercicios consolidan la comprensión de conceptos fundamentales como análisis léxico, eficiencia computacional, manejo de memoria dinámica y diseño estructurado de herramientas para el procesamiento de lenguajes formales.
