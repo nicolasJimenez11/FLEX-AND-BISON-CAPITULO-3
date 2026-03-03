@@ -78,16 +78,24 @@ Ejercicio 1
 
 Para el primer ejercicio realicé pruebas ingresando diferentes líneas de texto con palabras, números y espacios. El programa identificó correctamente los bloques definidos por la expresión regular y separó adecuadamente cada palabra según lo esperado. También se verificó que los saltos de línea fueran reconocidos correctamente y que no aparecieran advertencias durante la ejecución. En general, el comportamiento fue consistente con lo diseñado y permitió comprobar que el reconocimiento de bloques funciona de manera adecuada.
 
+![Ejecución Ejercicio 1](imagenes/1.png)
+
+![Ejecución Ejercicio 1 - Parte 2](imagenes/1-2.png)
+
+
 Ejercicio 2
 
 En el segundo ejercicio probé textos con distintas combinaciones de mayúsculas y minúsculas, por ejemplo palabras como “Casa”, “CASA” y “casa” dentro del mismo contenido. Los resultados demostraron que el programa las contabiliza como una sola palabra, lo cual confirma que el uso de tolower() y strcasecmp() fue implementado correctamente. Los conteos obtenidos coincidieron con el número real de apariciones, mostrando que la concordancia funciona de forma correcta y sin duplicaciones innecesarias.
+
+![Ejecución Ejercicio 2](imagenes/2.png)
+
+![Ejecución Ejercicio 2 - Caso adicional](imagenes/2-1.png)
 
 Ejercicio 3
 
 Para el tercer ejercicio ingresé textos más extensos con una mayor variedad de palabras para evaluar el comportamiento de la tabla hash dinámica. El programa manejó correctamente las colisiones mediante el uso de listas enlazadas (chaining), sin presentar errores relacionados con el tamaño de la estructura. Esto permitió comprobar que la implementación es estable y escalable, incluso cuando aumenta la cantidad de datos procesados.
 
-
-
+![Ejecución Ejercicio 3](imagenes/3.png)
 
 
 **ANALISIS**
