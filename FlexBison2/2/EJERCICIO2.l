@@ -6,7 +6,7 @@
 
 #define HASHSIZE 101
 
-/* Estructura de símbolo */
+/* Estructura de simbolo */
 struct symbol {
     char *name;
     int count;
@@ -16,7 +16,7 @@ struct symbol {
 /* Tabla hash */
 struct symbol *symtab[HASHSIZE];
 
-/* Hash ignorando mayúsculas */
+/* Hash ignorando mayusculas */
 unsigned symhash(char *sym) {
     unsigned int hash = 0;
     unsigned c;
@@ -27,7 +27,7 @@ unsigned symhash(char *sym) {
     return hash % HASHSIZE;
 }
 
-/* Buscar o crear símbolo */
+/* Buscar o crear simbolo */
 struct symbol *lookup(char *sym) {
     struct symbol *sp;
     unsigned hash = symhash(sym);
@@ -63,12 +63,12 @@ struct symbol *lookup(char *sym) {
 int main(void) {
     yylex();
 
-    printf("\n CONCORDANCIA \n");
+    printf(" CONCORDANCIA ");
 
     for (int i = 0; i < HASHSIZE; i++) {
         struct symbol *sp = symtab[i];
         while (sp) {
-            printf("%s: %d\n", sp->name, sp->count);
+            printf("%s: %d", sp->name, sp->count);
             sp = sp->next;
         }
     }
